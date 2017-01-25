@@ -1,0 +1,43 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+{% block title %}Application Form{% endblock %}
+
+{% block content %}
+    <h3>Employment Application</h3>
+    <p id="instructions">Please complete all the fields and then hit submit. </p>
+    <br>
+    <form action="/application-success" method="POST">
+        <div class="user-data">
+            <label for="firstname">First Name:</label>
+            <input id="firstname" type="text" name="firstName">
+            <br>
+            <br>
+            <label for="lastname">Last Name:</label>
+            <input id="lastname" type="text" name="lastName">
+            <br>
+            <br>
+            <label for="salaryrequirements">Salary Requirements:</label>
+            <input id ="salaryrequirements" type="text" name="salaryRequirements">
+            <br>
+            <br>
+            <label for="postions"> Position you are applying for</label>
+            <br>
+            <br>
+            <select id="positions" name="position">
+                {% for job in jobs %}
+                    <option value="{{job}}">{{job}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <br>
+            <input type="submit">
+
+        </div>
+
+    </form>
+{% endblock %}
+
+
+
+ <!-- <button type="submit" =URL></button> ??????? -->
